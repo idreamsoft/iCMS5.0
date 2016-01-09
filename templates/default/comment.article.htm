@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$show.title}-->评论</title>
+<meta name="keywords" content="<!--{$site.keywords}-->,iCMS,DreamArticle,iDreamSoft">
+<meta name="description" content="<!--{$site.description|html2txt}-->">
+<!--{iCMS:public}-->
+<style type="text/css">
+/*container*/
+#container { margin:5px auto 0px auto; width: 1003px; text-align: left; }
+#header #logo { height: 70px; width: 287px; }
+#header #banner { float: right; }
+#menu { padding: 10px; margin: 3px auto 1px auto; border: 1px solid #bdbdbd; background: #fff; }
+#main { border: 1px solid #bdbdbd; margin: 10px 10px 0 0; width:700px }
+#main .title { font-size: 16px; height: 30px; padding-top:10px; border-bottom: 1px dashed #bdbdbd; text-align: center; }
+#main .position { font-size:14px; margin-bottom: 4px; height: 25px; line-height: 25px; border-bottom: 1px solid #bdbdbd; padding-left: 10px; }
+#main #comment { padding:5px; }
+#container #sidebar { float:right; width: 289px; padding: 1px; border: 1px solid #bdbdbd; margin: 10px 0 0 0; }
+#sidebar .pright-rbox { padding: 2px; margin: 0; }
+.pright-rbox .title { margin-bottom: 4px; height: 25px; line-height:25px; padding-left: 10px; font-size:14px; font-weight:bold; border-bottom: 1px solid #bdbdbd; }
+#seccodeimg { vertical-align:middle; margin-left:5px; height:24px; border:1px #ccc solid; padding:1px; }
+.pright-rbox ul { display:block; }
+.pright-rbox ul li { height:20px; border-bottom: 1px dashed #bdbdbd; padding:5px 0px 2px 4px }
+/* circle */
+#navCircle { margin: 0; padding: 0 0 20px 10px; border-bottom: 1px solid #9FB1BC; }
+#navCircle li { margin: 0; padding: 0; display: inline; list-style-type: none; }
+#navCircle a:link, #navCircle a:visited { float: left; font-weight: bold; padding: 0 12px 6px 12px; text-decoration: none; color: #333333; }
+#navCircle a:link.active, #navCircle a:visited.active, #navCircle a:hover { padding-bottom: 6px; color: #333333; background: url(circle.gif) no-repeat bottom center; }
+.page { height: 20px; padding-top:5px; background-color: #F9F8F4; padding-left: 10px; }
+.ul { list-style: none; margin:0px 0px 2px 5px; padding:2px; border-bottom: #CCCCCC 1px solid; }
+.t { list-style:none; height:22px; border-left:#d4d4d4 2px solid; border-bottom: #EFEFEF 1px solid; padding:2px; background-color:#F6F6F6; font-size: 14px; padding-top: 6px; }
+.border { background-color:#F9F8F4; border:#D4D4D4 solid 1px; padding:2px; }
+#footer { border-top:#D4D4D4 solid 1px; margin: 10px auto 0px auto; width: 100%; font-size: 14px; padding-top:5px; }
+</style>
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <div id="banner"></div>
+    <div id="logo"><img src="<!--{$site.publicURL}-->/common/iCMS.logo.gif" /></div>
+  </div>
+  <div id="menu">
+    <ul id="navCircle">
+      <li><a class="active" href="<!--{$site.url}-->">首页</a></li>
+      <!--{iCMS:forums type='top' loop='true'}-->
+      <li><a href="<!--{$forums.url}-->"><!--{$forums.name}--></a></li>
+      <!--{/iCMS}-->
+    </ul>
+  </div>
+  <div id="sidebar">
+    <div class="pright-rbox">
+      <div class="title">热评文章</div>
+      <ul>
+        <!--{iCMS:list row="10" order='comments' loop='true'}-->
+        <li><img src="<!--{$site.publicURL}-->/common/icon.gif" alt="<!--{$list.title}-->" width="10" height="13" align="absmiddle" /> <a href="<!--{$list.url}-->" target="_blank" title="<!--{$list.title}-->"><!--{$list.title|cut:21}--></a></li>
+        <!--{/iCMS}-->
+      </ul>
+    </div>
+    <div class="pright-rbox">
+      <div class="title">最新评论</div>
+      <ul>
+        <!--{iCMS:comment loop='true' row="10" type="all"}-->
+        <li>·<a href="<!--{$comment.url}-->" target="_blank" title="<!--{$comment.username}-->评论[<!--{$comment.title}-->]说:<!--{$comment.content|html2txt}-->"><!--{$comment.content|html2txt|cut:21}--></a></li>
+        <!--{/iCMS}-->
+      </ul>
+    </div>
+  </div>
+  <div id="main">
+    <div class="position">当前位置: <a href="<!--{$site.index}-->">首页</a> → <!--{$forum.nav}--> → <!--{$show.link}--> 评论 共<span class="total"><!--{$total}--></span>条 </div>
+    <div class="title"><!--{$show.link}--> </div>
+    <blockquote><!--{$show.description}--><span style="float:right"><a href="<!--{$show.url}-->" target="_blank">查看详情</a></span></blockquote>
+    <h3>最新评论</h3>
+	<ol id="comment">
+	  <!--{iCMS:comment row='10' orderby='new' loop='true' page='true' mid=$commentInfo.mId sortid=$commentInfo.sortId indexid=$commentInfo.indexId}-->
+	  <li class="comment-list" id="comment-<!--{$comment.id}-->">
+	    <div class="comment-info"><span id="lou_<!--{$comment.id}-->" style='color:#990000'><!--{$comment.lou}-->楼</span> <span id="comment_username_<!--{$comment.id}-->" class="username"><!--{$comment.username}--></span> 于<span id="comment_time_<!--{$comment.id}-->"><!--{$comment.addtime|date:"Y-m-d H:i"}--></span>评论道 </div>
+	    <div class="comment-content"><!--{$comment.contents}--></div>
+	    <div class="comment-action"><a href='javascript:iCMS.digg("up",<!--{$comment.indexId}-->,<!--{$comment.id}-->)'>支持[+<span id='up_<!--{$comment.id}-->'><!--{$comment.up}--></span>]</a><a href='javascript:iCMS.digg("down",<!--{$comment.indexId}-->,<!--{$comment.id}-->)'>反对[-<span id='down_<!--{$comment.id}-->'><!--{$comment.down}--></span>]</a><a href='javascript:iCMS.quote(<!--{$comment.id}-->,<!--{$comment.floor}-->)' id="quote<!--{$comment.id}-->">回复</a> <a href='javascript:iCMS.unquote(<!--{$comment.id}-->)' id="unquote<!--{$comment.id}-->" style="display:none;">取消回复</a></div>
+	    <div class="clearfloat"></div>
+	  </li>
+	  <!--{iCMSelse}--> 暂无评论 <!--{/iCMS}-->
+	</ol>
+      <div class="page"><!--{$pagenav}--></div>
+    <!--{iCMS:comment width='560' height='120'}--></div>
+     </div>
+</div>
+<div id="footer">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+      <tr>
+        <td align="center" style="line-height: 18px">Powered by iCMS <!--{$version}--> &copy; 2007-2010 iDreamSoft.cn Inc. All rights reserved.<br /></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

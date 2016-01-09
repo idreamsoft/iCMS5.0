@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>网站地图 - powered by iCMS</title>
+<link href="<!--{$site.publicURL}-->/common/sitemap.css" rel="stylesheet" type="text/css" />
+<style>
+.mdiv {
+	margin:0px;
+	margin-bottom:10px;
+	padding:3px;
+}
+</style>
+</head>
+<body>
+<div class="main mceneter">
+<div class="toplogo">
+  <div class="logo"> <a href="/"><img src="<!--{$site.publicURL}-->/common/iCMS.logo.gif" /></a> </div>
+  <div class="title"> 网站地图 </div>
+</div>
+<div class="cmain">
+  <div class="ctitle">
+    <h1>网站地图</h1>
+    <span></span> </div>
+  <div class="cbox mceneter">
+    <div class="maplist">
+      <div><!--{iCMS:forums loop="true" type="top" row="100"}-->
+        <div><a href='<!--{$forums.url}-->'><b><!--{$forums.name}--></b></a></div>
+        <div style='margin-left:15px'><!--{iCMS:forums loop="true" type="sub" fid=$forums.fid}--><a href='<!--{$forums.url}-->'><!--{$forums.name}--></a> <!--{/iCMS}--></div>
+        <!--{/iCMS}--></div>
+    </div>
+  </div>
+</div>
+<div class="copyright mceneter">Powered by <span style="color:#0000FF"><a href="http://www.idreamsoft.com" target="_blank">iCMS</a></span> <!--{$version}--> &copy; 2007-2010 <a href="http://www.idreamsoft.com" target="_blank"><span style="color:#669900">iDreamSoft.com</span></a> Inc. All rights reserved.</div>
+</body>
+</html>

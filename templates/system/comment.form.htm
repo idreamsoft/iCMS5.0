@@ -1,0 +1,41 @@
+<link href="<!--{$site.publicURL}-->/common/comment.css" rel="stylesheet" type="text/css" />
+<div class="comment-wrapper">
+  <form action="<!--{$site.publicURL}-->/comment.php" method="post" name="iComment" target="iFrame" id="iComment">
+    <div id="iUserInfo" class="comment-user" style="display:none;"></div>
+    <div id="iUserLogin" class="comment-user"><span class="register"><a href="<!--{$site.publicURL}-->/passport.php?do=register" target="_blank">立即注册</a></span>
+      <label for="iUserName" hidefocus="true">用户名：</label>
+      <input id="iUserName" name="username" type="text" class="txt"/>
+      <label for="iPassWord" hidefocus="true" style="margin-left:5px;">密码：</label>
+      <input id="iPassWord" name="password" type="password" class="txt"/>
+      <input class="button" type="button" value="登 录" id="comment-login"/>
+    </div>
+    <div class="comment-alert"><img src="<!--{$site.publicURL}-->/common/notice.gif" align="absmiddle" /> 请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论。</div>
+    <textarea id="comment_text" name="commentext" rows="8" onkeyup="textareasize(this,<!--{$commentInfo.height}-->)" style="width:<!--{$commentInfo.width}-->;height:<!--{$commentInfo.height}-->px;"></textarea>
+    <div class="comment-seccode">验证码：
+      <input name="seccode" type="text" class="txt" id="iSeccode" style="width:60px;" maxlength="4"/>
+      <span>把图片上的文字填写到小输入框里 </span></div>
+    <div class="comment_submit">
+      <input name="do" type="hidden" value="save" />
+      <input id="comment_quote" name="quote" value="0" type="hidden">
+      <input id="comment_floor" name="floor" value="0" type="hidden">
+      <input id="comment_title" name="title" value="<!--{$commentInfo.title}-->" type="hidden">
+      <input id="comment_mid"	name="mId" value="<!--{$commentInfo.mId}-->" type="hidden">
+      <input id="comment_indexId"	name="indexId" value="<!--{$commentInfo.indexId}-->" type="hidden">
+      <input id="comment_sortId"	name="sortId" value="<!--{$commentInfo.sortId}-->" type="hidden">
+      <input name="do" value="save" type="hidden">
+      <input name="iframe" value="1" type="hidden">
+      <input class="submit" type="submit" id="submit" tabindex="5" value="发 表" hidefocus="true" />
+      <!--{if $commentInfo.anonymous}--><span>
+      <input class="checkbox" type="checkbox" name="anonymous" id="anonymous" value="1" tabindex="5" />
+      <label for="anonymous" hidefocus="true">匿名?</label>
+      </span> <!--{/if}--> </div>
+  </form>
+  <iframe name="iFrame" width="0" height="0" style="display:none;"></iframe>
+</div>
+<script type="text/javascript">
+iCMS.CPN			='<!--{$cookie.prename}-->';
+iCMS.anonymous		=<!--{if $commentInfo.anonymous}-->true<!--{else}-->false<!--{/if}-->;
+iCMS.anonymousname	="<!--{$commentInfo.anonymousname}-->";
+</script>
+<script type="text/javascript" src="<!--{$site.publicURL}-->/common/comment.js?5.0"></script>
+

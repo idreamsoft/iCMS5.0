@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$site.title}-->-<!--{$site.seotitle}-->-<!--{$site.seotitle}--></title>
+<meta name="keywords" content="<!--{$site.keywords}-->">
+<meta name="description" content="<!--{$site.description|html2txt}-->">
+<!--{iCMS:public}-->
+<link href="style/iCMS.css" rel="stylesheet" type="text/css" />
+<link href="style/global.css" rel="stylesheet" type="text/css" />
+<link href="style/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+<!--
+$(function(){
+	$(".showpic").mouseover(function(){
+		var _this=this;
+		$(".showpic").each(function(i){
+			var picNum=$(this).attr("picdiv"); 
+			if(_this.id==this.id){
+				if(picNum==0){
+					$(this).addClass("btitle2");
+					$("#titlelink").addClass("cDRed");
+				}else{
+					$(this).addClass("active");
+					$("#picli"+picNum).addClass("active");
+				}
+				$("#picdiv"+picNum).show();
+			}else{
+				if(picNum==0){
+					$("#headline").addClass("btitle");
+					$("#titlelink").removeClass("cDRed");
+				}else{
+					$(this).removeClass("active");
+					$("#picli"+picNum).removeClass("active");
+				}
+				
+				$("#picdiv"+picNum).hide();
+			}
+		});
+	});
+});
+-->
+</script>
+</head>
+<body>
+<div class="container"> <!--{include file="./header.htm"}-->
+  <div class="area1">
+    <div class="cleft"> <!--{iCMS:list loop='true' pic='true' row="7"}--> <!--{if $list.first}-->
+      <div id="headline" class="btitle2 showpic" picdiv="<!--{$list.index}-->">
+        <h1><a href="<!--{$list.url}-->" id="titlelink" title="<!--{$list.title}-->"><!--{$list.title|cut:20}--></a></h1>
+      </div>
+      <div class="newstitle"> <!--{else}-->
+        <ul id="picul<!--{$list.index}-->" class="showpic" picdiv="<!--{$list.index}-->">
+          <li id="picli<!--{$list.index}-->">·<a href="<!--{$list.url}-->" title="<!--{$list.title}-->"><!--{$list.title|cut:20}--></a> <span><!--{$list.description|cut:8}--></span></li>
+        </ul>
+        <!--{/if}--> <!--{/iCMS}--> </div>
+    </div>
+    <div class="cright"> <!--{iCMS:list loop='true' pic='true' row="7"}-->
+      <div id="picdiv<!--{$list.index}-->" style="display:<!--{if $list.first}-->block<!--{else}-->none<!--{/if}-->;">
+        <div class="fpic"><a href="<!--{$list.url}-->"><img src="<!--{$list.pic|small:400:200}-->" width="400" height="200" border="0" alt="<!--{$list.title}-->" /></a></div>
+        <div class="digest"><strong>核心提示：</strong><!--{$list.description|html2txt|cut:50}-->……<a href="<!--{$list.url}-->">[详细]</a></div>
+      </div>
+      <!--{/iCMS}--> </div>
+    <div class="clear"> </div>
+  </div>
+  <div class="blank9"> </div>
+  <!--{iCMS:forums loop='true' type="top" row="100"}-->
+  <div class="area2">
+    <div class="row">
+      <div class="title">
+        <h3><span><!--{$forums.name}--></span></h3>
+        <div class="tags"><!--{iCMS:tag loop='true' row='15' orderby='hot' sortid=$forums.fid}--> <a href="<!--{$tag.url}-->" target="_blank"><!--{$tag.name}--></a> <!--{/iCMS}--></div>
+      </div>
+      <div class="newsA"> <!--{iCMS:list loop='true' sub="all" row="12" fid=$forums.fid}--> 
+        <!--{if $list.first||$list.rownum==7}--><!--{if $list.rownum==7}-->
+        </ul>
+        <!--{/if}-->
+        <ul class="newsList">
+          <div class="btitle">
+            <h2><a href="<!--{$list.url}-->" title="<!--{$list.title}-->"><!--{$list.title|cut:20}--></a></h2>
+            <p><!--{$list.description|html2txt|cut:50}--></p>
+          </div>
+          <!--{else}-->
+          <li><span class="date"><!--{$list.pubdate|date:"Y/m/d"}--></span><a href="<!--{$list.url}-->" title="<!--{$list.title}-->"><!--{$list.title|cut:20}--></a> </li>
+          <!--{/if}--> <!--{/iCMS}-->
+        </ul>
+        <div class="clear"> </div>
+      </div>
+      <div class="picA">
+        <div class="title"> <span><a href="<!--{$forums.url}-->">更多<!--{$forums.name}-->&gt;&gt;</a></span>
+          <h4><!--{$forums.name}-->精品推荐</h4>
+        </div>
+        <ul class="picList">
+          <!--{iCMS:list loop='true' sub="all" pic="true" row="7" fid=$forums.fid}-->
+          <li><a href="<!--{$list.url}-->"><img src="<!--{$list.pic|small:140:140}-->" width="120" height="110" border="0" alt="<!--{$list.title}-->" /></a>
+            <p><a href="<!--{$list.url}-->" class="cBlue" title="<!--{$list.title}-->"><!--{$list.title|cut:10}--></a></p>
+          </li>
+          <!--{/iCMS}-->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="blank9"> </div>
+  <!--{/iCMS}-->
+  <div class="flink">
+    <div class="title1">
+      <dl>
+        <dt>友情链接 & 合作伙伴 </dt>
+      </dl>
+    </div>
+    <div class="flinkcon">
+      <ul>
+        <!--{iCMS:link loop='true'}--><a href='<!--{$link.url}-->' target='_blank'><!--{$link.name}--></a><!--{/iCMS}-->
+      </ul>
+    </div>
+  </div>
+  <!--{include file="./footer.htm"}--> </div>
+</body>
+</html>

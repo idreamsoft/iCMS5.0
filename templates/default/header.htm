@@ -1,0 +1,22 @@
+<div class="header">
+<div class="r"><!--{iCMS:advertise name="全站顶部广告"}--></div>
+<div id="logo"><img src="images/logo.gif" /></div>
+</div>
+<div class="menu">
+<ul>
+  <li><a href="/">首页</a> | <!--{iCMS:forums loop='true' type="top" row="10"}--><a href="<!--{$forums.url}-->"><!--{$forums.name}--></a> <!--{if !$forums.last}-->|<!--{/if}--> <!--{/iCMS}--></li>
+</ul>
+</div>
+<div class="search">
+<form name="searchForm" method="get" action="<!--{$site.publicURL}-->/search.php" id="search" target="_blank">
+  <table border="0" align="left" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="300"><input name="q" type="text" class="q" id="q" size="42" value="请输入关键字" onclick="this.value='';"/></td>
+      <td width="40"><input type="submit" class="button" value="搜 索"/></td>
+      <td width="60" align="center">热门标签:</td>
+    </tr>
+  </table>
+</form>
+<div class="tag"> <!--{iCMS:tag loop='true' row='10' orderby='hot'}--> <a href="<!--{$tag.url}-->" target="_blank"><!--{$tag.name}--></a> <!--{/iCMS}--> </div>
+</div>
+<div class="blank3"> </div>

@@ -1,0 +1,13 @@
+<!--{capture assign=html}-->
+
+<ol id="comment">
+  <!--{iCMS:comment row='10' orderby='new' loop='true' page='true' mid=$commentInfo.mId sortid=$commentInfo.sortId indexid=$commentInfo.indexId}-->
+  <li class="comment-list" id="comment-<!--{$comment.id}-->">
+    <div class="comment-info"><span id="lou_<!--{$comment.id}-->" style='color:#990000'><!--{$comment.lou}-->楼</span> <span id="comment_username_<!--{$comment.id}-->" class="username"><!--{$comment.username}--></span> 于<span id="comment_time_<!--{$comment.id}-->"><!--{$comment.addtime|date:"Y-m-d H:i"}--></span>评论道 </div>
+    <div class="comment-content"><!--{$comment.contents}--></div>
+    <div class="comment-action"><a href='javascript:iCMS.digg("up",<!--{$comment.indexId}-->,<!--{$comment.id}-->)'>支持[+<span id='up_<!--{$comment.id}-->'><!--{$comment.up}--></span>]</a><a href='javascript:iCMS.digg("down",<!--{$comment.indexId}-->,<!--{$comment.id}-->)'>反对[-<span id='down_<!--{$comment.id}-->'><!--{$comment.down}--></span>]</a><a href='javascript:iCMS.quote(<!--{$comment.id}-->,<!--{$comment.floor}-->)' id="quote<!--{$comment.id}-->">回复</a> <a href='javascript:iCMS.unquote(<!--{$comment.id}-->)' id="unquote<!--{$comment.id}-->" style="display:none;">取消回复</a></div>
+    <div class="clearfloat"></div>
+  </li>
+  <!--{iCMSelse}--> 暂无评论 <!--{/iCMS}-->
+</ol>
+<!--{/capture}--> document.write("<!--{ $html|html2js }-->");

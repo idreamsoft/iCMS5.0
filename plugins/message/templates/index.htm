@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>留言- Powered by iCMS</title>
+<meta name="generator" content="iCMS <!--{$version}-->" />
+<meta name="author" content="iDreamSoft Studio" />
+<meta name="copyright" content="2007-2010 (c) iDreamSoft Studio." />
+<link href="res/iCMS.css" rel="stylesheet" type="text/css" />
+<!--{iCMS:public}--> 
+<style type="text/css">
+html, body { font-family:Verdana, Microsoft YaHei, Simsun, Arial Unicode MS, Mingliu, Arial, Helvetica; line-height:1.5; }
+.message-wrapper { margin-top:50px; padding-left:20px; }
+.message { height:auto!important; height:42px; min-height:42px; border-bottom:1px #d4d4d4 dotted; padding-bottom:12px; margin-bottom:18px; }
+.message:after { display:block; visibility:hidden; height:0; content:"."; clear:both; }
+.message-face { height:42px; width:42px; border:1px #edeeef solid; padding:1px; float:left; margin-right:20px; }
+.message-info { width:540px; float:left; }
+.message-title a, .message-title span { font-size:14px; color:#69b3fd; margin-right:10px; }
+.message-title a { text-decoration:underline; }
+.message-title { font-size:11px; color:#ababab; }
+.message-noapproved { font-weight:bold; }
+.message-content { color:#646464; font-size:12px; word-break:break-all; overflow-x:hidden; word-wrap:break-word; }
+.message-content p{margin-top:10px;}
+.messages_paginate { float:right; }
+.messages_response h3 { margin-top:40px; font-size:14px; color:#000000; font-family:宋体; border-bottom:1px #b3b3b3 solid; height:25px; width:602px; margin-bottom:19px; }
+.messages_response p { margin-bottom:12px; color:#646464; font-size:14px; }
+.messages_response p input { height:24px; border:1px #bdbdbd solid; width:197px; line-height:1.8; padding-left:5px; vertical-align:middle; }
+.messages_response textarea { width:597px; border:1px #bdbdbd solid; height:150px; padding:5px 5px; line-height:1.5; overflow:auto; }
+.message_submit { width:602px; }
+.message_submit input { float:right; background:url(common/submit.jpg) no-repeat top center; height:31px; width:74px; font-size:0; line-height:180px; overflow:hidden; border:none; cursor:pointer; }
+.messages_response span { color:#afafaf; font-size:12px; }
+span.message-asterisk { color:#ff6000; }
+.messages_wrapper { margin-left:20px; }
+</style>
+</head>
+<body>
+<div class="messages_wrapper">
+  <ol id="messages">
+  <!--{iCMS:plugins name="message" loop="true" page="true" row="10"}-->
+    <li class="message" id="message-<!--{$plugins.id}-->">
+      <div class="message-info">
+        <p class="message-title"> <a target="_blank" href="<!--{$plugins.url}-->"><!--{$plugins.author}--></a> <!--{$plugins.addtime|date:"Y-m-d H:i"}--></p>
+        <div class="message-content">
+          <p><!--{$plugins.content}--></p>
+        </div>
+      </div>
+    </li>
+<!--{/iCMS}-->
+  </ol>
+  <div class="messages_paginate"><!--{$pagenav}--></div>
+  <div class="messages_response">
+	<!--{iCMS:plugins name="message" call="form"}-->
+  </div>
+</div>
+</body>
+</html>

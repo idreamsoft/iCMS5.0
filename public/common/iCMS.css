@@ -1,0 +1,24 @@
+@charset"UTF-8";*{word-wrap:break-word;outline:none;}
+body, ol, ul, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset{margin:0;padding:0;}
+ol, ul{list-style:none;}
+h1, h2, h3, h4, h5, h6{font-size:12px;}
+a{color:#0B3B8C;text-decoration:none;}
+a:hover{text-decoration:underline;}
+table{border-collapse:collapse;border-spacing:0;}
+label{cursor:pointer;}
+:focus{outline:0;}
+body, table, input, textarea, button, select{font:12px "宋体", arial, sans-serif;}
+.clearfloat{clear:both;height:0;line-height:0px;}
+.comment-list{width:98%;clear:both;font-size:14px;border-bottom:1px dotted #BDBDBD;margin:10px 0px;}
+.comment-info{font:12px "宋体", arial, sans-serif;color:#8D8D8D;}
+.comment-info span{margin-right:4px;}
+.comment-info span.username{color:#0B3B8C;}
+.comment-content{margin-top:8px;color:#000000;word-break:break-all;overflow-x:hidden;word-wrap:break-word;padding-left:10px;line-height:160%}
+.comment-action{margin-bottom:4px;height:25px;line-height:25px;text-align:right;font-size:12px;}
+.comment-action a{text-decoration:none;color:#0B3B8C !important;margin-right:5px}
+.comment-action a:hover{text-decoration:none;color:#BC2D09 !important;}
+.comment-action span{margin:0px;}
+.comment-list .quote{border:1px solid #D1D5DB;padding:3px;background-color:#FFFEF5;margin-bottom:12px;text-align:left;}
+.comment-list .quote span{color:#8D8D8D;font-size:12px}
+.comment-list .quote .floor{float:right;}
+.comment-list .quote p{margin:8px 4px;line-height:160%;clear:both;}

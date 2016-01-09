@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$search.keyword}-->-<!--{$site.title}-->-<!--{$site.seotitle}--></title>
+<meta name="keywords" content="<!--{$forum.keywords}-->">
+<meta name="description" content="<!--{$forum.description|html2txt}-->">
+<!--{iCMS:public}-->
+<link href="style/iCMS.css" rel="stylesheet" type="text/css" />
+<link href="style/global.css" rel="stylesheet" type="text/css" />
+<link href="style/article.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="container"> 
+  <div class="header">
+    <div class="r"><!--{iCMS:advertise name="全站顶部广告"}--></div>
+    <div id="logo"><img src="images/logo.gif" /></div>
+  </div>
+  <div class="menu">
+    <ul>
+      <li><a href="/">首页</a> | <!--{iCMS:forums loop='true' type="top" row="10"}--><a href="<!--{$forums.url}-->"><!--{$forums.name}--></a> <!--{if !$forums.last}-->|<!--{/if}--> <!--{/iCMS}--></li>
+    </ul>
+  </div>
+  <div class="main cbody"> <!--左侧-->
+    <div class="pleft">
+      <div class="placenav"> <span>当前位置 :</span><a href="<!--{$site.index}-->">首页</a> > 搜索 "<!--{$search.keyword}-->" 结果 </div>
+      <div class="blogList">
+        <ul class="expBlogA">
+          <!--{iCMS:list loop='true' page='true' row='10' action='search'}--> <!--{if $list.last}-->
+          <li class="last"> <!--{else}-->
+          <li> <!--{/if}-->
+            <p class="pTit">·<span class="sData"><!--{$list.pubdate|date:"Y-m-d H"}--></span><span class="sTit"><a href="<!--{$list.url}-->" target="_blank"><!--{$list.title}--></a></span></p>
+            <p class="pDesc"><!--{$list.description}-->......<span>[<a href="<!--{$list.url}-->" target="_blank">查看详细</a>]</span></p>
+            <!--{if $list.pic}-->
+            <p class="pThumb"><strong>点击图片查看全文</strong><br />
+              <br />
+              <a href="<!--{$list.url}-->" target="_blank"><img src="<!--{$list.pic}-->" onload="if(this.width>500)this.width=500;" alt="<!--{$list.title}-->" /></a></p>
+            <!--{/if}-->
+            <p class="pLookall">» <a href="<!--{$list.url}-->" target="_blank">查看全文</a></p>
+            <!--{if $list.taglink}-->
+            <p class="pTtag">你感兴趣的:<!--{$list.taglink}--></p>
+            <!--{/if}--> </li>
+          <!--{/iCMS}-->
+          <div class="clear"></div>
+        </ul>
+        <div class="pages">
+          <div class="plist"> <!--{$pagenav}--></div>
+        </div>
+      </div>
+    </div>
+    <!--右侧-->
+    <div class="pright"> <!--侧边信息列表-->
+      <div class="search">
+        <form name="searchForm" method="get" action="<!--{$site.publicURL}-->/search.php" id="search" target="_blank">
+          <table border="0" align="left" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="200"><input name="q" type="text" class="q" id="q" value="请输入关键字" onclick="this.value='';"/></td>
+              <td width="40"><input type="submit" class="button" value="搜 索"/></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div class="ivy"></div>
+      <div class="rlist mt10">
+        <div class="title">排行榜</div>
+        <div class="rbox">
+          <ul class='txtlist'>
+            <!--{iCMS:list loop='true' orderby='hot' row="10" fid=$forum.fid}-->
+            <li><a href='<!--{$list.url}-->'><!--{$list.title}--></a></li>
+            <!--{/iCMS}-->
+          </ul>
+        </div>
+      </div>
+      <div class="ivy mt10"></div>
+      <!--侧边信息列表-->
+      <div class="rlist mt10">
+        <div class="title">最新图文</div>
+        <div class="rbox">
+          <ul class='rPic'>
+            <!--{iCMS:list loop='true' pic='true' row="10"}--> 
+            <!--{if $list.rownum<5}-->
+            <li><i class="iPic"><a href='<!--{$list.url}-->'><img width="120" height="140" src="<!--{$list.pic|small}-->" title="<!--{$list.title}-->"/></a></i> <i class="iTitle"><a href='<!--{$list.url}-->'><!--{$list.title|cut:10}--></a></i></li>
+            <!--{else}--> 
+            <!--{if $list.rownum==5}-->
+          </ul>
+          <div class="blank6"></div>
+          <ul class='txtlist'>
+            <!--{/if}-->
+            <li>[<!--{$list.sort.link}-->] <a href='<!--{$list.url}-->'><!--{$list.title}--></a></li>
+            <!--{/if}--> 
+            <!--{/iCMS}-->
+          </ul>
+        </div>
+      </div>
+      <div class="rlist mt10">
+        <div class="title">热门标签</div>
+        <div class="rbox" id="hotTags"> 
+          <!--{iCMS:tag loop="true" row="50" orderby="hot" sortid=$forum.fid}--> 
+          <a href="<!--{$tag.url}-->" title="<!--{$tag.name}-->"><!--{$tag.name}--></a> 
+          <!--{/iCMS}--> 
+        </div>
+      </div>
+    </div>
+    <div class="floatclear"><!--清除浮动--></div>
+  </div>
+  <!--{include file="./footer.htm"}--> 
+</div>
+</body>
+</html>

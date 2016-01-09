@@ -1,0 +1,55 @@
+<form action="<!--{$site.publicURL}-->/plugins.php?name=message" method="post" id="messageform">
+  <h3>发表你的留言</h3>
+  <p>
+    <input type="text" name="author" id="author" value="" maxlength="20" size="22" tabindex="1" aria-required='true' />
+    <label for="author"><small>昵&nbsp;&nbsp;称 <span class='message-asterisk'>*</span><span>必填</span></small></label>
+  </p>
+  <p>
+    <input type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required='true' />
+    <label for="email"><small>邮&nbsp;&nbsp;箱 <span class='message-asterisk'>*</span><span>必填，但不会公开</span></small></label>
+  </p>
+  <p>
+    <input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+    <label for="url"><small>您的网址</small></label>
+  </p>
+  <p>
+    <textarea name="content" id="content" cols="58" rows="10" tabindex="4"></textarea>
+  </p>
+  <div class="message_submit">
+    <input name="do" type="hidden" value="save" />
+    <input class="message_submit_button" name="submit" type="submit" id="submit" tabindex="5" value="提交" />
+  </div>
+</form>
+<script type="text/javascript">
+$(function(){
+	$('#messageform').submit(function(){
+		if($('#author').val()==''){
+			alert("昵称不能为空!");
+			$("#author").focus();
+			return false;
+		}
+		if($('#email').val()==''){
+			alert("邮箱不能为空!");
+			$("#email").focus();
+			return false;
+		}
+		if($('#content').val()==''){
+			alert("说两句吧!");
+			$("#content").focus();
+			return false;
+		}
+		$.post("<!--{$site.publicURL}-->/plugins.php?name=message",
+		       { author:$('#author').val(), email:$('#email').val(),url:$('#url').val(),content:$('#content').val(),'do':'save'},
+		       function(data){
+		          if(data=='1'){
+		          	alert("留言完成!");
+		          	window.location.reload();
+		          }else{
+		          	alert(data);
+		          }
+		       } 
+		);
+		return false;
+	});
+});
+</script>

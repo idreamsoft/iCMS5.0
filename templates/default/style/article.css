@@ -1,0 +1,138 @@
+@charset "utf-8";
+/*----------内容*/
+ul, li { list-style: none outside none; min-height: 12px; margin: 0; padding: 0; }
+.main { clear:both; }
+.cbody { width:1000px; margin:0 auto; }
+.mt10 { margin-top:10px; }
+.floatclear { clear:both; }
+input, select { vertical-align:middle; }
+i, em { font-style: normal; }
+.clear { clear: both; content: " "; display: block; font-size: 0; height: 0; line-height: 0; visibility: hidden; width: 0; }
+.pleft { width:680px; float:left; }
+.pleft .subforum { line-height:28px; border: 1px solid #BDBDBD; margin-bottom: 8px; padding:4px 0px 0px 4px; }
+.pleft .subforum .subtitle {float:left;border:2px solid #DDD; min-height:12px; min-width:90px;  margin:4px; padding:4px; font: bold 16px "微软雅黑"; }
+.pleft .subforum ul{ float:left;width:540px; margin-top:6px;}
+.pleft .subforum ul li{ float:left;}
+.pleft .subforum ul li a {height:18px; line-height:18px;border:1px solid #DDD; background:#FFF; text-decoration:none; margin-right:5px; color:#000; padding:4px; }
+.pleft .subforum ul li a:hover { color:#fff; background:#0B3B8C; text-decoration:none;}
+.placenav { height:28px; line-height:28px; border: 1px solid #BDBDBD; padding-left:10px; }
+.placenav a { color:#666666; }
+/*---------------右侧*/
+.pright { float:right; width: 310px; }
+.pright .search { clear:both; margin: 0px 0px 5px; clear:both; height:36px; line-height:30px; overflow:hidden; border:#CCCCCC solid 1px; }
+.pright .search table { margin:3px 0 0 5px; }
+.pright .search .button { font-size:14px; height:28px; line-height:20px; margin-left:5px; vertical-align:middle; font-weight: bold; }
+.pright .search .q { font-size:14px; height:24px; border:1px #bdbdbd solid; line-height:1.8; padding-left:5px; vertical-align:middle; background-color:#fff; width: 220px; }
+.pright .ivy { }
+.pright .ar1 { border: 1px solid #BDBDBD; }
+.rlist { margin-right: auto; margin-left: auto; clear:both; border: 1px solid #BDBDBD; }
+.rlist .title { height:28px; line-height:28px; text-indent:3px; font-weight:bold; letter-spacing:1px; color:#555; border-bottom: 1px solid #BDBDBD; }
+.rlist .title ul li.mark { border: 1px solid #ddd; font: bold 14px/24px "微软雅黑"; height: 22px; padding: 0px; float: left; height: 100%; margin: 4px 4px 0px 2px; background: none repeat scroll 0 0 #EDEDED; }
+.rlist .title ul li.active { background: none repeat scroll 0 0 #fff; border-bottom: 1px solid #fff; }
+.rbox { border-top: 1px solid #ddd; }
+.rbox ul { clear:both; }
+.rbox ul li a { color:#039; }
+.rbox ul.txtlist li { height:27px; line-height:27px; background:url(../images/ico_4.gif) 12px 13px no-repeat; text-indent:20px; overflow:hidden; padding-right: 4px; }
+.rbox .btop { border-top:dotted #BDBDBD 1px; }
+.rbox ul.rPic { }
+.rbox ul.rPic li { display: inline; float: left; margin: 10px 3px 0 10px; line-height: 18px; }
+.rbox ul.rPic i { display: block; text-align: center; }
+.rbox ul.rPic li img { border:#DDDDDD solid 1px; padding:1px; }
+.rbox ul.rPic li .iTitle { width:135px; overflow:hidden; height:18px; line-height:18px; }
+#hotTags { line-height:24px; padding: 4px 0px 4px 4px; }
+#hotTags a { margin-right:6px; display:inline-block; }
+/*---------------资讯:列表页:列表区域*/
+.newslist { border:1px solid #DDD; padding-bottom:10px; min-height:12px; }
+.newslist ul { padding: 20px 25px 0 20px; }
+.newslist .mb10 { margin-bottom: 10px; }
+.newslist .iTit { float: left; font-size: 14px; height: 24px; line-height: 24px; overflow: hidden; width: 480px; }
+.newslist .iData { float: right; width: 100px; }
+.newslist .iTit .sCol { padding-right: 20px; }
+.newslist .iline { height: 44px; margin-bottom: 20px; border-bottom: 1px dashed #333; clear:both; }
+.blogList { border:1px solid #DDD; padding-bottom:10px; min-height:12px; }
+.blogList .expBlogA { }
+.blogList .expBlogA li { width:100%; color:#0B3B8C; border-bottom:dotted 1px #DBDBDB; margin-top:10px; padding-bottom:5px; }
+.blogList .expBlogA li.L140 { height:140px; }
+.blogList .expBlogA li.last { border-bottom:none; padding-bottom:0px; }
+.blogList .expBlogA .pLeft { float:left; width:100px; height:140px; }
+.blogList .expBlogA .pRight { clear:right; float:left; margin-left:6px; width:520px; height:140px; }
+.blogList .pTit { height:28px; font-size:14px; line-height:28px; overflow:hidden; clear: both; }
+.blogList .pDesc { font-size: 14px; line-height: 150%; clear: both; padding: 0px 3px 2px 4px; text-align: left; text-indent:24px; margin-bottom:5px; color:#333; }
+.blogList .pDesc span { font-size: 12px; }
+.blogList .pThumb { margin:0 auto; text-align:center; }
+.blogList .pThumb img { border:#C8C8C6 1px solid; padding:5px; }
+.blogList .pLookall { text-align:right; height:24px; line-height:24px; width:100%; font-size: 14px; color: #0B3B8C; padding-right:4px; }
+.blogList .pTtag { text-align: left; padding: 0px 3px 5px; color: #333333; }
+.blogList .pRight .pTtag { height:10px; overflow:hidden; }
+.blogList .pTtag a { border-bottom:1px dotted #0B3B8C; color:#0B3B8C; text-decoration:none; }
+.blogList .pTit .sTit { font-weight:bold; }
+.blogList .pTit .sCol { padding-right:20px; }
+.blogList .pTit .sData { width:100px; float:right; font-size:12px; color:#777777; }
+/*---------------资讯:内容页*/
+.cBox { border:1px solid #DDD; }
+/*---------------内容页:标题*/
+.cBox .title { height:53px; line-height:53px; margin:0px auto 0px; text-align: center; }
+.cBox .title h1 { font-size:24px; font-weight: bold; }
+/*---------------内容页:相关信息*/
+.cBox .info { height:20px; line-height:20px; border-top:1px solid #EEE; border-bottom:1px solid #EEE; color:#999; padding-left: 20px; font-size:12px; }
+.cBox .taglink { height:27px; line-height:27px; color:#333; padding-left: 20px; font-size: 14px; }
+.cBox .taglink a { border-bottom:1px dotted #0B3B8C; color:#0B3B8C; text-decoration:none; }
+/*---------------内容页:正文*/
+.cBox .content { overflow:hidden; margin:10px auto; color:#444; font-size:14px; line-height:160%; padding:5px; }
+.cBox .content p { line-height:160%; }
+.cBox .content img { clear: both; display: block; margin: 0 auto; }
+.cBox .content a { border-bottom:1px dotted #0B3B8C; color:#0B3B8C; text-decoration:none; }
+/*---------------内容页:正文分页*/
+.cBox .cupage { margin:2px auto; text-align:center; border-bottom:1px solid #EEE; line-height:31px; overflow:hidden; clear:both; }
+.cBox .cupage a { color:#000; font-size:14px; margin:0px 5px; line-height:31px; border: 1px solid #DDDDDD; padding:2px 5px; }
+.cBox .cupage .pagebreaksel { font-size:14px; color:#FFF; margin-left:14px; background:#0B3B8C; font-weight: bold; }
+/*---------------内容页:操作*/
+.cBox .actbar { height:24px; line-height:24px; margin:6px auto; background:#FCFCFC; text-align:right; border-top: 1px solid #F0F0F0; }
+.cBox .actbar span { margin-right:20px; color:#CCC; }
+.cBox .actbar span a { color:#669900; margin-right:3px; margin-left:3px; }
+/*---------------内容页:上下文*/
+.cBox .context { line-height:27px; margin:6px auto; color:#666; }
+.cBox .context a { color:#0B3B8C; }
+.cBox .diggArea { padding:0px; margin:0px 0px 4px 8px; width:60px; height:58px; line-height:23px; float:left; border: 2px dashed #666; }
+.cBox .diggNum { margin:0px; text-align:center; padding:0px; font-size:12px; font-weight:bold; color:#CC0000; width:58px; height:23px; margin-top:8px; }
+.cBox .diggLink { margin:0px; text-align:center; padding:0px; font-size:14px; font-weight:bold; width:58px; height:23px; }
+.cBox .diggLink a { font-size:14px; font-weight:bold; color:#333; }
+.cBox .h { height:26px; line-height:26px; margin:1px auto; background:url(../images/title_bg_1.gif) repeat-x; border-bottom:1px solid #DDD; clear: both; }
+.cBox .h .ht { float:left; margin:0px 0px 0px 12px; display:inline; font-size: 14px; font-weight: bold; }
+.cBox .h .ht strong { letter-spacing:4px; color:#444; margin-right:10px; }
+.cBox .h span.more { color:#CCC; margin-right:10px; float:right; font-size:12px; font-weight: normal; }
+.cBox .c { overflow:hidden; margin:1px auto; color:#444; line-height:160%; padding-bottom: 5px; }
+.cBox .c ul.cPic { margin: 2px 0px 0px 2px; }
+.cBox .c ul.cPic li { display: inline; float: left; margin: 8px 10px; line-height: 18px; }
+.cBox .c ul.cPic i { display: block; text-align: center; }
+.cBox .c ul.cPic li img { border:#DDDDDD solid 1px; padding:1px; }
+.cBox .c ul.cPic li .iTitle { width:110px; overflow:hidden; height:18px; line-height:18px; }
+.cBox .c ul.cTxt { margin: 5px 0px 0px 5px; line-height: 20px; }
+.cBox .c ul.cTxt li { display: inline; float: left; margin: 2px 3px 4px 4px; height:20px; line-height: 20px; width:48%; overflow:hidden; }
+.cBox .c ul.cTxt li i { color:#0B3B8C; }
+.cBox .c ul.cTxt li i a { color:#0B3B8C; }
+/*---------------内容页:评论*/
+.comment { border:1px solid #DDD; margin-top:7px; clear: both; }
+.comment .commenttitle { height:26px; margin:1px auto; background:url(../images/title_bg_1.gif) repeat-x; border-bottom:1px solid #DDD; clear: both; }
+.comment .commenttitle .title { float:left; margin:5px 0px 0px 12px; color:#999; display:inline; }
+.comment .commenttitle .title strong { letter-spacing:4px; color:#444; margin-right:10px; }
+.comment .commenttitle .gotopost { float:right; display:block; width:100px; height:23px; }
+.comment .commenttitle .gotopost a { width:95px; height:22px; display:inline; float:right; text-align:center; line-height:22px; text-decoration:none; background:url(../images/ico_gotopost.gif) no-repeat; margin:1px 3px 0px 0px; }
+.comment .commentbox { width:98%; margin:0px auto; padding: 2px; }
+.comment .commentbox dl { width:636px; margin:10px auto 0px; border:1px solid #D1DDCE; }
+.comment .commentbox dl dt { width:636px; background:#F4F9F2; line-height:25px; text-indent:10px; color:#333; border-bottom:1px solid #E6ECE3; }
+.comment .commentbox dl dt span { color:#669933; font-size:11px; }
+.comment .commentbox dl dd { padding:10px; font-size:14px; line-height:25px; color:#666; }
+/*---------------内容页:发表评论:标题*/
+.comment .posttitle { height:26px; margin:10px auto; background:url(../images/title_bg_1.gif) repeat-x; border-top:1px solid #DDD; border-bottom:1px solid #DDD; clear: both; }
+.comment .posttitle strong { letter-spacing:4px; color:#444; display:block; margin:7px 0px 0px 13px; }
+.comment .postbox { margin:5px auto; overflow:hidden; }
+.comment .postbox .userbox { width:636px; overflow:hidden; margin-top:10px; }
+.comment .postbox .userbox dl { width:636px; }
+.comment .postbox .userbox dl dd { float:left; display:block; padding-bottom:2px; }
+.comment .postbox .userbox dl dd input.username, .comment .postbox .userbox dl dd input.password { width:100px; border:1px solid #CCC; padding:3px 0px 2px 5px; margin-right:10px; }
+.comment .postbox .userbox dl dd.mtop { margin:7px 7px 0px 0px; }
+.comment .postbox .txtbox { width:636px; line-height:25px; }
+.comment .postbox .txtbox textarea { border:1px solid #CCC; width:600px; height:80px; padding:5px; }
+.comment .postbox .sbut { margin:10px; }
+.comment .postbox .userbox .submit { width:100px; height:25px; padding-top:2px; }
